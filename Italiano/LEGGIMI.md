@@ -48,3 +48,15 @@ Scrivi `!chess @avversario` in qualsiasi canale in cui il tuo bot può leggere i
 - Ogni partita ha un ID univoco. Se ne inizi una nuova, i pulsanti della precedente smettono di funzionare.
 - Lo sfidante può scegliere il tema della scacchiera (Green, Blue, Brown, Purple) prima che l'avversario accetti.
 - Usa 🏳️ Arrenditi per arrenderti, o 🤝 Offri patta per proporre un pareggio.
+
+## Comando Slash (opzionale)
+
+Se vuoi usare `/chess` oltre a `!chess`, configura il comando slash in BDFD:
+
+| Campo | Valore |
+|-------|--------|
+| Option name | `avversario` |
+| Option type | User |
+| Option Required | Sì |
+
+Una volta configurato, gli utenti potranno usare `/chess avversario:@avversario`.

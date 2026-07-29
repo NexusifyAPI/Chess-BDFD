@@ -48,3 +48,15 @@ Digite `!chess @oponente` em qualquer canal onde seu bot consiga ler mensagens.
 - Cada partida tem um ID único. Se você iniciar uma nova, os botões da anterior param de funcionar.
 - O desafiante pode escolher o tema do tabuleiro (Green, Blue, Brown, Purple) antes de o oponente aceitar.
 - Use 🏳️ Render-se para abandonar, ou 🤝 Oferecer empate para propor empate.
+
+## Comando Slash (opcional)
+
+Se você quer usar `/chess` além de `!chess`, configure o comando slash no BDFD:
+
+| Campo | Valor |
+|-------|-------|
+| Option name | `oponente` |
+| Option type | User |
+| Option Required | Sim |
+
+Após configurar, os usuários poderão usar `/chess oponente:@oponente`.

@@ -48,3 +48,15 @@ Type `!chess @opponent` in any channel where your bot can read messages.
 - Each game has a unique game ID. If you start a new game, the old game's buttons stop working.
 - The challenger can choose the board theme (Green, Blue, Brown, Purple) before the opponent accepts.
 - Use the 🏳️ Resign button to forfeit, or 🤝 Offer draw to propose a tie.
+
+## Slash Command (optional)
+
+If you want to use `/chess` in addition to `!chess`, configure the slash command in BDFD:
+
+| Field | Value |
+|-------|-------|
+| Option name | `user` |
+| Option type | User |
+| Option Required | Yes |
+
+Once configured, users can use `/chess user:@opponent`.

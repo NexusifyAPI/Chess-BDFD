@@ -48,3 +48,15 @@ Tippe `!chess @gegner` in einem Kanal, in dem dein Bot Nachrichten lesen kann.
 - Jede Partie hat eine eindeutige Game-ID. Wenn du eine neue Partie startest, funktionieren die Buttons der alten nicht mehr.
 - Der Herausforderer kann das Brett-Thema (Green, Blue, Brown, Purple) wählen, bevor der Gegner annimmt.
 - Verwende 🏳️ Aufgeben, um aufzugeben, oder 🤝 Remis bieten, um ein Unentschieden vorzuschlagen.
+
+## Slash-Befehl (optional)
+
+Wenn du `/chess` zusätzlich zu `!chess` verwenden möchtest, konfiguriere den Slash-Befehl in BDFD:
+
+| Feld | Wert |
+|------|------|
+| Option name | `gegner` |
+| Option type | User |
+| Option Required | Ja |
+
+Nach der Konfiguration können Nutzer `/chess gegner:@gegner` verwenden.

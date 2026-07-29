@@ -48,3 +48,15 @@ Tape `!chess @adversaire` dans n'importe quel salon où ton bot peut lire les me
 - Chaque partie a un ID unique. Si tu en commences une nouvelle, les boutons de l'ancienne cessent de fonctionner.
 - Le challenger peut choisir le thème de l'échiquier (Green, Blue, Brown, Purple) avant que l'adversaire accepte.
 - Utilise 🏳️ Abandonner pour abandonner, ou 🤝 Proposer nul pour proposer un nul.
+
+## Commande Slash (optionnel)
+
+Si tu veux utiliser `/chess` en plus de `!chess`, configure la commande slash dans BDFD :
+
+| Champ | Valeur |
+|-------|--------|
+| Option name | `adversaire` |
+| Option type | User |
+| Option Required | Oui |
+
+Une fois configurée, les utilisateurs pourront utiliser `/chess adversaire:@adversaire`.

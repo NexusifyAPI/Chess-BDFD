@@ -16,7 +16,7 @@ $var[opponentID;$message[1;usuario]]
 $else
 $var[opponentID;$mentioned[1;no]]
 $if[$var[opponentID]==]
-$addTextDisplay[❌ Debes mencionar a un oponente. Uso: \`!chess @usuario\`]
+$addTextDisplay[❌ Debes mencionar a un oponente. Uso: \`$commandTrigger @usuario\`]
 $stop
 $endif
 $endif

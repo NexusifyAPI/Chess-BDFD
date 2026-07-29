@@ -48,3 +48,15 @@ Ejecuta `!chess @oponente` en cualquier canal donde tu bot pueda leer mensajes.
 - Cada partida tiene un ID único. Si empezás una nueva, los botones de la anterior dejan de funcionar.
 - El retador puede elegir el tema del tablero (Green, Blue, Brown, Purple) antes de que el oponente acepte.
 - Usá el botón 🏳️ Rendirse para abandonar, o 🤝 Ofrecer tablas para proponer empate.
+
+## Comando Slash (opcional)
+
+Si quieres usar `/chess` además de `!chess`, configura el slash command en BDFD:
+
+| Campo | Valor |
+|-------|-------|
+| Option name | `usuario` |
+| Option type | User |
+| Option Required | Sí |
+
+Una vez configurado, los usuarios podrán usar `/chess usuario:@oponente`.
