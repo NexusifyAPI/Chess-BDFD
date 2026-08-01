@@ -32,7 +32,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Questa sfida non è più attiva. Esegui \`$commandTrigger\` di nuovo.]
+$addTextDisplay[❌ Questa sfida non è più attiva. Ejecuta \`$var[trigger]\` de nuevo.]
 $stop
 $endif
 
@@ -58,7 +58,7 @@ $stop
 $endif
 
 $defer
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|p|-|-|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|p|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[lastMoveSAN;-]
@@ -187,7 +187,15 @@ $endif
 $defer
 $var[gameID;$randomString[10]]
 $var[theme;green]
-$var[state;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1|$var[oldwID]|$var[oldbID]|$var[gameID]|c|-|-|$var[theme]]
+$var[trigger;!chess]
+$if[$var[existingState]!=]
+$textSplit[$var[existingState];|]
+$var[trigger;$splitText[9]]
+$if[$var[trigger]==]
+$var[trigger;!chess]
+$endif
+$endif
+$var[state;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1|$var[oldwID]|$var[oldbID]|$var[gameID]|c|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[state];$var[oldwID]]
 
 $removeAllComponents
@@ -241,7 +249,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -254,10 +262,14 @@ $var[theme;$splitText[8]]
 $if[$var[theme]==]
 $var[theme;green]
 $endif
+$var[trigger;$splitText[9]]
+$if[$var[trigger]==]
+$var[trigger;!chess]
+$endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Questa partita non è più attiva. Esegui \`$commandTrigger\` per crearne una nuova.]
+$addTextDisplay[❌ Questa partita non è più attiva. Ejecuta \`$var[trigger]\` para crear una nueva.]
 $stop
 $endif
 
@@ -359,7 +371,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -371,6 +383,10 @@ $var[curStatus;$splitText[5]]
 $var[theme;$splitText[8]]
 $if[$var[theme]==]
 $var[theme;green]
+$endif
+$var[trigger;$splitText[9]]
+$if[$var[trigger]==]
+$var[trigger;!chess]
 $endif
 
 $if[$var[gID]!=$var[curGID]]
@@ -396,7 +412,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ Non sei un giocatore di questa partita. Esegui \`$commandTrigger\` per crearne una tua.]
+$addTextDisplay[❌ Non sei un giocatore di questa partita. Ejecuta \`$var[trigger]\` para crear la tuya.]
 $stop
 $endif
 $endif
@@ -409,7 +425,7 @@ $var[winnerSide;b]
 $if[$var[resignerSide]==b]$var[winnerSide;w]$endif
 
 $var[finalStatus;$var[winnerSide]]
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[finalStatus]|-|Resa|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[finalStatus]|-|Resa|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[lastMoveSAN;Resa]
@@ -457,7 +473,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -469,6 +485,10 @@ $var[curStatus;$splitText[5]]
 $var[theme;$splitText[8]]
 $if[$var[theme]==]
 $var[theme;green]
+$endif
+$var[trigger;$splitText[9]]
+$if[$var[trigger]==]
+$var[trigger;!chess]
 $endif
 
 $if[$var[gID]!=$var[curGID]]
@@ -498,7 +518,7 @@ $stop
 $endif
 
 $defer
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|d|-|Patta concordata|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|d|-|Patta concordata|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[finalStatus;d]
@@ -549,7 +569,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ Non sei un giocatore di questa partita. Esegui \`$commandTrigger\` per crearne una tua.]
+$addTextDisplay[❌ Non sei un giocatore di questa partita. Ejecuta \`$var[trigger]\` para crear la tuya.]
 $stop
 $endif
 $endif
@@ -575,7 +595,7 @@ $var[lastMoveSAN2;-]
 $textSplit[$var[state];|]
 $var[lastMoveSAN2;$splitText[7]]
 
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|do|-|$var[lastMoveSAN2]|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|do|-|$var[lastMoveSAN2]|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $removeAllComponents
@@ -604,7 +624,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -616,6 +636,10 @@ $var[curStatus;$splitText[5]]
 $var[theme;$splitText[8]]
 $if[$var[theme]==]
 $var[theme;green]
+$endif
+$var[trigger;$splitText[9]]
+$if[$var[trigger]==]
+$var[trigger;!chess]
 $endif
 
 $if[$var[gID]!=$var[curGID]]
@@ -633,7 +657,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ Non sei un giocatore di questa partita. Esegui \`$commandTrigger\` per crearne una tua.]
+$addTextDisplay[❌ Non sei un giocatore di questa partita. Ejecuta \`$var[trigger]\` para crear la tuya.]
 $stop
 $endif
 $endif
@@ -657,7 +681,7 @@ $var[lastMoveSAN;-]
 $textSplit[$var[state];|]
 $var[lastMoveSAN;$splitText[7]]
 
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|p|-|$var[lastMoveSAN]|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|p|-|$var[lastMoveSAN]|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $removeAllComponents
@@ -725,7 +749,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -737,7 +761,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Questa partita non è più attiva. Esegui \`$commandTrigger\` per crearne una nuova.]
+$addTextDisplay[❌ Questa partita non è più attiva. Ejecuta \`$var[trigger]\` para crear una nueva.]
 $stop
 $endif
 
@@ -749,7 +773,7 @@ $endif
 
 $defer
 $var[theme;$var[newTheme]]
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[challengerID;$var[wID]]
@@ -819,7 +843,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -831,7 +855,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Questa partita non è più attiva. Esegui \`$commandTrigger\` per crearne una nuova.]
+$addTextDisplay[❌ Questa partita non è più attiva. Ejecuta \`$var[trigger]\` para crear una nueva.]
 $stop
 $endif
 
@@ -843,7 +867,7 @@ $endif
 
 $defer
 $var[theme;$var[newTheme]]
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[challengerID;$var[wID]]
@@ -913,7 +937,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -925,7 +949,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Questa partita non è più attiva. Esegui \`$commandTrigger\` per crearne una nuova.]
+$addTextDisplay[❌ Questa partita non è più attiva. Ejecuta \`$var[trigger]\` para crear una nueva.]
 $stop
 $endif
 
@@ -937,7 +961,7 @@ $endif
 
 $defer
 $var[theme;$var[newTheme]]
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[challengerID;$var[wID]]
@@ -1007,7 +1031,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Non hai una partita attiva. Esegui \`$commandTrigger\` per crearne una.]
+$addTextDisplay[❌ Non hai una partita attiva. Ejecuta \`$var[trigger]\` para crear una.]
 $stop
 $endif
 
@@ -1019,7 +1043,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Questa partita non è più attiva. Esegui \`$commandTrigger\` per crearne una nuova.]
+$addTextDisplay[❌ Questa partita non è più attiva. Ejecuta \`$var[trigger]\` para crear una nueva.]
 $stop
 $endif
 
@@ -1031,7 +1055,7 @@ $endif
 
 $defer
 $var[theme;$var[newTheme]]
-$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]]
+$var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|$var[curStatus]|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[challengerID;$var[wID]]
@@ -1102,12 +1126,21 @@ $stop
 $endif
 
 $defer
+$var[oldState;$getVar[chess_state;$var[wID]]]
+$var[trigger;!chess]
+$if[$var[oldState]!=]
+$textSplit[$var[oldState];|]
+$var[trigger;$splitText[9]]
+$if[$var[trigger]==]
+$var[trigger;!chess]
+$endif
+$endif
 $setVar[chess_state;;$var[wID]]
 $var[challengerID;$var[wID]]
 $var[opponentID;$var[newOpponentID]]
 $var[gameID;$randomString[10]]
 $var[theme;green]
-$var[state;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1|$var[challengerID]|$var[opponentID]|$var[gameID]|c|-|-|$var[theme]]
+$var[state;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1|$var[challengerID]|$var[opponentID]|$var[gameID]|c|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[state];$var[challengerID]]
 
 $removeAllComponents

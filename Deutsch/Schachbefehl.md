@@ -58,7 +58,8 @@ $endif
 
 $var[gameID;$randomString[10]]
 $var[theme;green]
-$var[state;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1|$var[challengerID]|$var[opponentID]|$var[gameID]|c|-|-|$var[theme]]
+$var[trigger;$commandTrigger]
+$var[state;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1|$var[challengerID]|$var[opponentID]|$var[gameID]|c|-|-|$var[theme]|$var[trigger]]
 $setVar[chess_state;$var[state];$var[challengerID]]
 
 $removeAllComponents
