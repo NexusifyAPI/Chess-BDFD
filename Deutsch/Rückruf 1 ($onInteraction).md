@@ -174,7 +174,7 @@ $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
 $ephemeral
-$addTextDisplay[❌ Du hast bereits eine laufende Partie. Brich die vorherige Partie ab, um eine neue zu erstellen.]
+$addTextDisplay[❌ Du hast bereits eine laufende Partie. Termínala o ríndete antes de crear otra.]
 $stop
 $endif
 $if[$var[existingStatus]==c]
