@@ -28,7 +28,7 @@ $if[$var[oldStatus]==c]
 $var[statusMsg;Sfida annullata.]
 $endif
 $if[$var[oldStatus]==p]
-$var[statusMsg;Partita abbandonata. <@$var[opponentID]> ya puede jugar de nuevo.]
+$var[statusMsg;Partita abbandonata. <@$var[opponentID]> può giocare di nuovo.]
 $endif
 
 $addContainer[main;#2B2D31;false]

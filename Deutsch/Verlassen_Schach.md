@@ -28,7 +28,7 @@ $if[$var[oldStatus]==c]
 $var[statusMsg;Herausforderung abgebrochen.]
 $endif
 $if[$var[oldStatus]==p]
-$var[statusMsg;Partie verlassen. <@$var[opponentID]> ya puede jugar de nuevo.]
+$var[statusMsg;Partie verlassen. <@$var[opponentID]> kann wieder spielen.]
 $endif
 
 $addContainer[main;#2B2D31;false]
