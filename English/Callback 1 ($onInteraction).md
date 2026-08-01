@@ -9,8 +9,9 @@ $onInteraction
 ```
 $nomention
 $disableInnerSpaceRemoval
+$try
 
-$if[$checkContains[$customID;chaccept~;chdecline~;chcancel~;chnew~;chclose~;chbp~;chforfeit~;chdraw~;chdrawdecline~;chthemegr~;chthemebl~;chthemebr~;chthemepu~]==false]
+$if[$checkContains[$customID;chaccept~;chdecline~;chcancel~;chnew~;chclose~;chbp~;chforfeit~;chdraw~;chdrawdecline~;chthemegr~;chthemebl~;chthemebr~;chthemepu~;chforce~]==false]
 $stop
 $endif
 
@@ -173,7 +174,7 @@ $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
 $ephemeral
-$addTextDisplay[❌ You already have an ongoing game. Finish it or resign before creating another.]
+$addTextDisplay[❌ You already have an ongoing game. Cancel the previous game to create a new one.]
 $stop
 $endif
 $if[$var[existingStatus]==c]
@@ -1086,4 +1087,82 @@ $endif
 $addButtonCV2[chthemepu~$var[challengerID]~$var[gameID];🟣 Purple;$var[tpStyle];$var[tpDis];;tr1]
 $stop
 $endif
+
+# ----- chforce: cancel existing game and create new one -----
+$if[$var[action]==chforce]
+$var[wID;$splitText[2]]
+$var[newOpponentID;$splitText[3]]
+$var[oldOpponentID;$splitText[4]]
+$var[oldGameID;$splitText[5]]
+
+$if[$authorID!=$var[wID]]
+$ephemeral
+$addTextDisplay[❌ Only the challenger can cancel their previous game.]
+$stop
+$endif
+
+$defer
+$setVar[chess_state;;$var[wID]]
+$var[challengerID;$var[wID]]
+$var[opponentID;$var[newOpponentID]]
+$var[gameID;$randomString[10]]
+$var[theme;green]
+$var[state;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1|$var[challengerID]|$var[opponentID]|$var[gameID]|c|-|-|$var[theme]]
+$setVar[chess_state;$var[state];$var[challengerID]]
+
+$removeAllComponents
+$addContainer[main;#5865F2;false]
+$addTextDisplay[# ♟️ **Chess — Pending challenge**
+
+<@$var[challengerID]> (♔ White) challenges <@$var[opponentID]> (♚ Black) to a chess match.
+
+⏳ Waiting for response from <@$var[opponentID]>...;main]
+$addSeparator[true;small;main]
+$addActionRow[r1;main]
+$addButtonCV2[chaccept~$var[challengerID]~$var[opponentID]~$var[gameID];✅ Accept;success;false;;r1]
+$addButtonCV2[chdecline~$var[challengerID]~$var[opponentID]~$var[gameID];❌ Decline;danger;false;;r1]
+$addButtonCV2[chcancel~$var[challengerID]~$var[opponentID]~$var[gameID];🚪 Cancel;secondary;false;;r1]
+$addSeparator[true;small;main]
+$addTextDisplay[**Game ID:** \`$var[gameID]\`;main]
+$addSeparator[true;small]
+$addContainer[themes;#2B2D31;false]
+$addTextDisplay[🎨 **Choose board** — Only <@$var[challengerID]> can change the theme.
+Current theme: **$var[theme]**;themes]
+$addSeparator[true;small;themes]
+$addActionRow[tr1;themes]
+$var[tgStyle;secondary]
+$var[tgDis;false]
+$if[$var[theme]==green]
+$var[tgStyle;success]
+$var[tgDis;true]
+$endif
+$addButtonCV2[chthemegr~$var[challengerID]~$var[gameID];🟢 Green;$var[tgStyle];$var[tgDis];;tr1]
+$var[tbStyle;secondary]
+$var[tbDis;false]
+$if[$var[theme]==blue]
+$var[tbStyle;success]
+$var[tbDis;true]
+$endif
+$addButtonCV2[chthemebl~$var[challengerID]~$var[gameID];🔵 Blue;$var[tbStyle];$var[tbDis];;tr1]
+$var[twStyle;secondary]
+$var[twDis;false]
+$if[$var[theme]==brown]
+$var[twStyle;success]
+$var[twDis;true]
+$endif
+$addButtonCV2[chthemebr~$var[challengerID]~$var[gameID];🟤 Brown;$var[twStyle];$var[twDis];;tr1]
+$var[tpStyle;secondary]
+$var[tpDis;false]
+$if[$var[theme]==purple]
+$var[tpStyle;success]
+$var[tpDis;true]
+$endif
+$addButtonCV2[chthemepu~$var[challengerID]~$var[gameID];🟣 Purple;$var[tpStyle];$var[tpDis];;tr1]
+$stop
+$endif
+
+$catch
+$ephemeral
+$addTextDisplay[❌ An unexpected error occurred: $error[message]]
+$endtry
 ```

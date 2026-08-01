@@ -9,6 +9,7 @@
 ```
 $nomention
 $disableInnerSpaceRemoval
+$try
 
 $var[challengerID;$authorID]
 $if[$isSlash==true]
@@ -32,13 +33,25 @@ $if[$var[existingState]!=]
 $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
+$var[oldOpponent;$splitText[3]]
+$var[oldGameID;$splitText[4]]
 $ephemeral
-$addTextDisplay[❌ Ya tienes una partida en curso. Termínala o ríndete antes de crear otra.]
+$addContainer[errbox;#ED4245;false]
+$addTextDisplay[❌ Ya tienes una partida en curso. Cancela la partida anterior para crear una nueva.;errbox]
+$addSeparator[true;small;errbox]
+$addActionRow[forcebtn;errbox]
+$addButtonCV2[chforce~$var[challengerID]~$var[opponentID]~$var[oldOpponent]~$var[oldGameID];🗑️ Cancelar partida anterior;danger;false;;forcebtn]
 $stop
 $endif
 $if[$var[existingStatus]==c]
+$var[oldOpponent;$splitText[3]]
+$var[oldGameID;$splitText[4]]
 $ephemeral
-$addTextDisplay[❌ Ya tienes un reto pendiente. Cancélalo antes de crear otro.]
+$addContainer[errbox;#ED4245;false]
+$addTextDisplay[❌ Ya tienes un reto pendiente. Cancela el reto anterior para crear uno nuevo.;errbox]
+$addSeparator[true;small;errbox]
+$addActionRow[forcebtn;errbox]
+$addButtonCV2[chforce~$var[challengerID]~$var[opponentID]~$var[oldOpponent]~$var[oldGameID];🗑️ Cancelar reto anterior;danger;false;;forcebtn]
 $stop
 $endif
 $endif
@@ -96,4 +109,8 @@ $var[tpStyle;success]
 $var[tpDis;true]
 $endif
 $addButtonCV2[chthemepu~$var[challengerID]~$var[gameID];🟣 Purple;$var[tpStyle];$var[tpDis];;tr1]
+$catch
+$ephemeral
+$addTextDisplay[❌ Ocurrió un error inesperado: $error[message]]
+$endtry
 ```

@@ -9,6 +9,7 @@
 ```
 $nomention
 $disableInnerSpaceRemoval
+$try
 
 $var[challengerID;$authorID]
 $if[$isSlash==true]
@@ -32,13 +33,25 @@ $if[$var[existingState]!=]
 $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
+$var[oldOpponent;$splitText[3]]
+$var[oldGameID;$splitText[4]]
 $ephemeral
-$addTextDisplay[❌ You already have an ongoing game. Finish it or resign before creating another.]
+$addContainer[errbox;#ED4245;false]
+$addTextDisplay[❌ You already have an ongoing game. Cancela la partida anterior para crear una nueva.;errbox]
+$addSeparator[true;small;errbox]
+$addActionRow[forcebtn;errbox]
+$addButtonCV2[chforce~$var[challengerID]~$var[opponentID]~$var[oldOpponent]~$var[oldGameID];🗑️ Cancel previous game;danger;false;;forcebtn]
 $stop
 $endif
 $if[$var[existingStatus]==c]
+$var[oldOpponent;$splitText[3]]
+$var[oldGameID;$splitText[4]]
 $ephemeral
-$addTextDisplay[❌ You already have a pending challenge. Cancel it before creating another.]
+$addContainer[errbox;#ED4245;false]
+$addTextDisplay[❌ You already have a pending challenge. Cancela el reto anterior para crear uno nuevo.;errbox]
+$addSeparator[true;small;errbox]
+$addActionRow[forcebtn;errbox]
+$addButtonCV2[chforce~$var[challengerID]~$var[opponentID]~$var[oldOpponent]~$var[oldGameID];🗑️ Cancel previous challenge;danger;false;;forcebtn]
 $stop
 $endif
 $endif
@@ -96,4 +109,8 @@ $var[tpStyle;success]
 $var[tpDis;true]
 $endif
 $addButtonCV2[chthemepu~$var[challengerID]~$var[gameID];🟣 Purple;$var[tpStyle];$var[tpDis];;tr1]
+$catch
+$ephemeral
+$addTextDisplay[❌ An unexpected error occurred: $error[message]]
+$endtry
 ```

@@ -9,6 +9,7 @@ $onInteraction
 ```
 $nomention
 $disableInnerSpaceRemoval
+$try
 
 $if[$checkContains[$customID;chpiece~;chbpr~;chpr~;chdest~]==false]
 $stop
@@ -680,4 +681,9 @@ $addSeparator[true;small;main]
 $addTextDisplay[**Giocatori:** <@$var[wID]> (♔) vs <@$var[bID]> (♚) • **ID:** \`$var[gID]\`;main]
 $stop
 $endif
+
+$catch
+$ephemeral
+$addTextDisplay[❌ Si è verificato un errore imprevisto: $error[message]]
+$endtry
 ```

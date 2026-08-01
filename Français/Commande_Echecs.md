@@ -9,6 +9,7 @@
 ```
 $nomention
 $disableInnerSpaceRemoval
+$try
 
 $var[challengerID;$authorID]
 $if[$isSlash==true]
@@ -32,13 +33,25 @@ $if[$var[existingState]!=]
 $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
+$var[oldOpponent;$splitText[3]]
+$var[oldGameID;$splitText[4]]
 $ephemeral
-$addTextDisplay[❌ Vous avez déjà une partie en cours. Terminez-la ou abandonnez avant d'en créer une autre.]
+$addContainer[errbox;#ED4245;false]
+$addTextDisplay[❌ Vous avez déjà une partie en cours. Cancela la partida anterior para crear una nueva.;errbox]
+$addSeparator[true;small;errbox]
+$addActionRow[forcebtn;errbox]
+$addButtonCV2[chforce~$var[challengerID]~$var[opponentID]~$var[oldOpponent]~$var[oldGameID];🗑️ Annuler la partie précédente;danger;false;;forcebtn]
 $stop
 $endif
 $if[$var[existingStatus]==c]
+$var[oldOpponent;$splitText[3]]
+$var[oldGameID;$splitText[4]]
 $ephemeral
-$addTextDisplay[❌ Vous avez déjà un défi en attente. Annulez-le avant d'en créer un autre.]
+$addContainer[errbox;#ED4245;false]
+$addTextDisplay[❌ Vous avez déjà un défi en attente. Cancela el reto anterior para crear uno nuevo.;errbox]
+$addSeparator[true;small;errbox]
+$addActionRow[forcebtn;errbox]
+$addButtonCV2[chforce~$var[challengerID]~$var[opponentID]~$var[oldOpponent]~$var[oldGameID];🗑️ Annuler le défi précédent;danger;false;;forcebtn]
 $stop
 $endif
 $endif
@@ -96,4 +109,8 @@ $var[tpStyle;success]
 $var[tpDis;true]
 $endif
 $addButtonCV2[chthemepu~$var[challengerID]~$var[gameID];🟣 Purple;$var[tpStyle];$var[tpDis];;tr1]
+$catch
+$ephemeral
+$addTextDisplay[❌ Une erreur inattendue s'est produite : $error[message]]
+$endtry
 ```
