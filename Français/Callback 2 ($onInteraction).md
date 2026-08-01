@@ -26,7 +26,7 @@ $var[fromSquare;$message]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -46,7 +46,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 
@@ -158,7 +158,7 @@ $var[fromSquare;$splitText[4]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -178,7 +178,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 
@@ -292,7 +292,7 @@ $var[promoPiece;$message]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -312,7 +312,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 
@@ -490,7 +490,7 @@ $var[mvPromo;$splitText[4]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -510,7 +510,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 

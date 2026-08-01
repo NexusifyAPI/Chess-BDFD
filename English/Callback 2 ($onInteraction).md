@@ -26,7 +26,7 @@ $var[fromSquare;$message]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -46,7 +46,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 
@@ -158,7 +158,7 @@ $var[fromSquare;$splitText[4]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -178,7 +178,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 
@@ -292,7 +292,7 @@ $var[promoPiece;$message]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -312,7 +312,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 
@@ -490,7 +490,7 @@ $var[mvPromo;$splitText[4]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -510,7 +510,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 

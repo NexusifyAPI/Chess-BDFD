@@ -32,7 +32,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Ce défi n'est plus actif. Ejecuta \`$var[trigger]\` de nuevo.]
+$addTextDisplay[❌ Ce défi n'est plus actif. Exécutez \`$var[trigger]\` à nouveau.]
 $stop
 $endif
 
@@ -174,12 +174,12 @@ $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
 $ephemeral
-$addTextDisplay[❌ Vous avez déjà une partie en cours. Termínala o ríndete antes de crear otra.]
+$addTextDisplay[❌ Vous avez déjà une partie en cours. Annulez la partie précédente pour en créer une nouvelle.]
 $stop
 $endif
 $if[$var[existingStatus]==c]
 $ephemeral
-$addTextDisplay[❌ Vous avez déjà un défi en attente.]
+$addTextDisplay[❌ Vous avez déjà un défi en attente. Annulez le défi précédent pour en créer un nouveau.]
 $stop
 $endif
 $endif
@@ -249,7 +249,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -269,7 +269,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 
@@ -371,7 +371,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -412,7 +412,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ Vous n'êtes pas un joueur de cette partie. Ejecuta \`$var[trigger]\` para crear la tuya.]
+$addTextDisplay[❌ Vous n'êtes pas un joueur de cette partie. Exécutez \`$var[trigger]\` pour créer la vôtre.]
 $stop
 $endif
 $endif
@@ -473,7 +473,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -569,7 +569,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ Vous n'êtes pas un joueur de cette partie. Ejecuta \`$var[trigger]\` para crear la tuya.]
+$addTextDisplay[❌ Vous n'êtes pas un joueur de cette partie. Exécutez \`$var[trigger]\` pour créer la vôtre.]
 $stop
 $endif
 $endif
@@ -624,7 +624,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -657,7 +657,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ Vous n'êtes pas un joueur de cette partie. Ejecuta \`$var[trigger]\` para crear la tuya.]
+$addTextDisplay[❌ Vous n'êtes pas un joueur de cette partie. Exécutez \`$var[trigger]\` pour créer la vôtre.]
 $stop
 $endif
 $endif
@@ -749,7 +749,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -761,7 +761,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 
@@ -843,7 +843,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -855,7 +855,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 
@@ -937,7 +937,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -949,7 +949,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 
@@ -1031,7 +1031,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Vous n'avez pas de partie active. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Vous n'avez pas de partie active. Exécutez \`$var[trigger]\` pour en créer une.]
 $stop
 $endif
 
@@ -1043,7 +1043,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Cette partie n'est plus active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Cette partie n'est plus active. Exécutez \`$var[trigger]\` pour en créer une nouvelle.]
 $stop
 $endif
 

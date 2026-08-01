@@ -32,7 +32,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ This challenge is no longer active. Ejecuta \`$var[trigger]\` de nuevo.]
+$addTextDisplay[❌ This challenge is no longer active. Run \`$var[trigger]\` again.]
 $stop
 $endif
 
@@ -174,12 +174,12 @@ $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
 $ephemeral
-$addTextDisplay[❌ You already have an ongoing game. Termínala o ríndete antes de crear otra.]
+$addTextDisplay[❌ You already have an ongoing game. Cancel the previous game to create a new one.]
 $stop
 $endif
 $if[$var[existingStatus]==c]
 $ephemeral
-$addTextDisplay[❌ You already have a pending challenge.]
+$addTextDisplay[❌ You already have a pending challenge. Cancel the previous challenge to create a new one.]
 $stop
 $endif
 $endif
@@ -249,7 +249,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -269,7 +269,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 
@@ -371,7 +371,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -412,7 +412,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ You are not a player in this game. Ejecuta \`$var[trigger]\` para crear la tuya.]
+$addTextDisplay[❌ You are not a player in this game. Run \`$var[trigger]\` to create your own.]
 $stop
 $endif
 $endif
@@ -473,7 +473,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -569,7 +569,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ You are not a player in this game. Ejecuta \`$var[trigger]\` para crear la tuya.]
+$addTextDisplay[❌ You are not a player in this game. Run \`$var[trigger]\` to create your own.]
 $stop
 $endif
 $endif
@@ -624,7 +624,7 @@ $var[gID;$splitText[3]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -657,7 +657,7 @@ $endif
 $if[$authorID!=$var[wID]]
 $if[$authorID!=$var[bID]]
 $ephemeral
-$addTextDisplay[❌ You are not a player in this game. Ejecuta \`$var[trigger]\` para crear la tuya.]
+$addTextDisplay[❌ You are not a player in this game. Run \`$var[trigger]\` to create your own.]
 $stop
 $endif
 $endif
@@ -749,7 +749,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -761,7 +761,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 
@@ -843,7 +843,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -855,7 +855,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 
@@ -937,7 +937,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -949,7 +949,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 
@@ -1031,7 +1031,7 @@ $endif
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ You have no active game. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ You have no active game. Run \`$var[trigger]\` to create one.]
 $stop
 $endif
 
@@ -1043,7 +1043,7 @@ $var[curStatus;$splitText[5]]
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ This game is no longer active. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ This game is no longer active. Run \`$var[trigger]\` to create a new one.]
 $stop
 $endif
 

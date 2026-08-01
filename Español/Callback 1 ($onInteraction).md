@@ -174,12 +174,12 @@ $textSplit[$var[existingState];|]
 $var[existingStatus;$splitText[5]]
 $if[$var[existingStatus]==p]
 $ephemeral
-$addTextDisplay[❌ Ya tienes una partida en curso. Termínala o ríndete antes de crear otra.]
+$addTextDisplay[❌ Ya tienes una partida en curso. Cancela la partida anterior para crear una nueva.]
 $stop
 $endif
 $if[$var[existingStatus]==c]
 $ephemeral
-$addTextDisplay[❌ Ya tienes un reto pendiente.]
+$addTextDisplay[❌ Ya tienes un reto pendiente. Cancela el reto anterior para crear uno nuevo.]
 $stop
 $endif
 $endif

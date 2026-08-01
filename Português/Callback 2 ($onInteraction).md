@@ -26,7 +26,7 @@ $var[fromSquare;$message]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Você não tem partida ativa. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Você não tem partida ativa. Execute \`$var[trigger]\` para criar uma.]
 $stop
 $endif
 
@@ -46,7 +46,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Esta partida não está mais ativa. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Esta partida não está mais ativa. Execute \`$var[trigger]\` para criar uma nova.]
 $stop
 $endif
 
@@ -158,7 +158,7 @@ $var[fromSquare;$splitText[4]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Você não tem partida ativa. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Você não tem partida ativa. Execute \`$var[trigger]\` para criar uma.]
 $stop
 $endif
 
@@ -178,7 +178,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Esta partida não está mais ativa. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Esta partida não está mais ativa. Execute \`$var[trigger]\` para criar uma nova.]
 $stop
 $endif
 
@@ -292,7 +292,7 @@ $var[promoPiece;$message]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Você não tem partida ativa. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Você não tem partida ativa. Execute \`$var[trigger]\` para criar uma.]
 $stop
 $endif
 
@@ -312,7 +312,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Esta partida não está mais ativa. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Esta partida não está mais ativa. Execute \`$var[trigger]\` para criar uma nova.]
 $stop
 $endif
 
@@ -490,7 +490,7 @@ $var[mvPromo;$splitText[4]]
 $var[state;$getVar[chess_state;$var[wID]]]
 $if[$var[state]==]
 $ephemeral
-$addTextDisplay[❌ Você não tem partida ativa. Ejecuta \`$var[trigger]\` para crear una.]
+$addTextDisplay[❌ Você não tem partida ativa. Execute \`$var[trigger]\` para criar uma.]
 $stop
 $endif
 
@@ -510,7 +510,7 @@ $endif
 
 $if[$var[gID]!=$var[curGID]]
 $ephemeral
-$addTextDisplay[❌ Esta partida não está mais ativa. Ejecuta \`$var[trigger]\` para crear una nueva.]
+$addTextDisplay[❌ Esta partida não está mais ativa. Execute \`$var[trigger]\` para criar uma nova.]
 $stop
 $endif
 
