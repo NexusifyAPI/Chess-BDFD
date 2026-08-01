@@ -34,7 +34,7 @@ $endif
 $addContainer[main;#2B2D31;false]
 $addTextDisplay[🚪 **Échecs — $var[statusMsg]**
 
-Tu peux maintenant créer une nouvelle partie avec \`$commandTrigger\`.;main]
+Tu peux maintenant créer une nouvelle partie avec \`!chess\`.;main]
 
 $catch
 $addTextDisplay[❌ Ocurrió un error: $error[message]]

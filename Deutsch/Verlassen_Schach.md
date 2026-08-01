@@ -34,7 +34,7 @@ $endif
 $addContainer[main;#2B2D31;false]
 $addTextDisplay[🚪 **Schach — $var[statusMsg]**
 
-Du kannst jetzt ein neues Spiel mit \`$commandTrigger\` erstellen.;main]
+Du kannst jetzt ein neues Spiel mit \`!chess\` erstellen.;main]
 
 $catch
 $addTextDisplay[❌ Ocurrió un error: $error[message]]
