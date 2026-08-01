@@ -37,6 +37,6 @@ $addTextDisplay[🚪 **Chess — $var[statusMsg]**
 You can now create a new game with \`!chess\`.;main]
 
 $catch
-$addTextDisplay[❌ Ocurrió un error: $error[message]]
+$addTextDisplay[❌ An unexpected error occurred: $error[message]]
 $endtry
 ```

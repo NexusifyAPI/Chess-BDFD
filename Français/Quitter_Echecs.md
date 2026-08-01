@@ -37,6 +37,6 @@ $addTextDisplay[🚪 **Échecs — $var[statusMsg]**
 Tu peux maintenant créer une nouvelle partie avec \`!chess\`.;main]
 
 $catch
-$addTextDisplay[❌ Ocurrió un error: $error[message]]
+$addTextDisplay[❌ Une erreur inattendue s'est produite : $error[message]]
 $endtry
 ```

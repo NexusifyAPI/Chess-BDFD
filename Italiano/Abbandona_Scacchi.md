@@ -37,6 +37,6 @@ $addTextDisplay[🚪 **Scacchi — $var[statusMsg]**
 Puoi già creare una nuova partita con \`!chess\`.;main]
 
 $catch
-$addTextDisplay[❌ Ocurrió un error: $error[message]]
+$addTextDisplay[❌ Si è verificato un errore imprevisto: $error[message]]
 $endtry
 ```
