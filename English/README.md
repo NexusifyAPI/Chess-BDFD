@@ -20,7 +20,7 @@ This variable stores the full state of each game: `fen|whiteID|blackID|gameID|st
 
 ## External API
 
-This game requires a stateless HTTP API to validate moves and render the board. The API used is `http://chess.nexusify.co`.
+This game requires a stateless HTTP API to validate moves and render the board. The API used is `http://chess.nexusify.co:26102`.
 
 ## Installation
 

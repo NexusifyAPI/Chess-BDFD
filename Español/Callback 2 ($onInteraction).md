@@ -87,7 +87,7 @@ $endif
 
 $defer
 $removeAllComponents
-$httpGet[http://chess.nexusify.co/moves?fen=$url[encode;$var[fen]]&square=$var[fromSquare]]
+$httpGet[http://chess.nexusify.co:26102/moves?fen=$url[encode;$var[fen]]&square=$var[fromSquare]]
 $var[movesCount;$httpResult[count]]
 $var[pieceLetter;$httpResult[piece]]
 $var[pieceColor;$httpResult[piece_color]]
@@ -105,7 +105,7 @@ $if[$var[pieceLetter]==B]$var[pieceName;$var[lblB]]$endif
 $if[$var[pieceLetter]==R]$var[pieceName;$var[lblR]]$endif
 $if[$var[pieceLetter]==Q]$var[pieceName;$var[lblQ]]$endif
 $if[$var[pieceLetter]==K]$var[pieceName;$var[lblK]]$endif
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;#5865F2;false]
 $addTextDisplay[# ♟️ **Ajedrez — Mover pieza**
 
@@ -219,7 +219,7 @@ $endif
 
 $defer
 $removeAllComponents
-$httpGet[http://chess.nexusify.co/moves?fen=$url[encode;$var[fen]]&square=$var[fromSquare]]
+$httpGet[http://chess.nexusify.co:26102/moves?fen=$url[encode;$var[fen]]&square=$var[fromSquare]]
 $var[movesCount;$httpResult[count]]
 $var[pieceLetter;$httpResult[piece]]
 $var[pieceColor;$httpResult[piece_color]]
@@ -237,7 +237,7 @@ $if[$var[pieceLetter]==B]$var[pieceName;$var[lblB]]$endif
 $if[$var[pieceLetter]==R]$var[pieceName;$var[lblR]]$endif
 $if[$var[pieceLetter]==Q]$var[pieceName;$var[lblQ]]$endif
 $if[$var[pieceLetter]==K]$var[pieceName;$var[lblK]]$endif
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;#5865F2;false]
 $addTextDisplay[# ♟️ **Ajedrez — Mover pieza**
 
@@ -354,7 +354,7 @@ $endif
 $defer
 $var[mvFrom;$var[fromSquare]]
 $var[mvTo;$var[toSquare]]
-$httpGet[http://chess.nexusify.co/apply?fen=$url[encode;$var[fen]]&from=$var[mvFrom]&to=$var[mvTo]&promotion=$var[promoPiece]]
+$httpGet[http://chess.nexusify.co:26102/apply?fen=$url[encode;$var[fen]]&from=$var[mvFrom]&to=$var[mvTo]&promotion=$var[promoPiece]]
 $var[legal;$httpResult[legal]]
 $if[$var[legal]!=true]
 $ephemeral
@@ -403,7 +403,7 @@ $var[cc;#FEE75C]
 $var[resultMsg;🤝 ¡Tablas! Partida empatada]
 $endif
 $var[perspective;white]
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Ajedrez — Partida finalizada**
 
@@ -425,7 +425,7 @@ $stop
 $endif
 
 $removeAllComponents
-$httpGet[http://chess.nexusify.co/moves?fen=$url[encode;$var[fen]]]
+$httpGet[http://chess.nexusify.co:26102/moves?fen=$url[encode;$var[fen]]]
 $var[movesCount;$httpResult[count]]
 $var[turn;$httpResult[turn]]
 $var[cc;#5865F2]
@@ -437,7 +437,7 @@ $var[turnLabel;♚ Negras]
 $var[activePlayer;$var[bID]]
 $endif
 $var[lblP;♙ Peón]$var[lblN;♘ Caballo]$var[lblB;♗ Alfil]$var[lblR;♖ Torre]$var[lblQ;♕ Dama]$var[lblK;♔ Rey]$if[$var[turn]==b]$var[lblP;♟ Peón]$var[lblN;♞ Caballo]$var[lblB;♝ Alfil]$var[lblR;♜ Torre]$var[lblQ;♛ Dama]$var[lblK;♚ Rey]$endif
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Ajedrez**
 
@@ -554,7 +554,7 @@ $if[$var[mvPromo]==p]
 $var[toSquare;$var[mvTo]]
 $removeAllComponents
 $var[perspective;white]
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;#FEE75C;false]
 $addTextDisplay[# ♟️ **Ajedrez — Promoción**
 
@@ -576,7 +576,7 @@ $stop
 $endif
 
 $var[promoPiece;q]
-$httpGet[http://chess.nexusify.co/apply?fen=$url[encode;$var[fen]]&from=$var[mvFrom]&to=$var[mvTo]&promotion=$var[promoPiece]]
+$httpGet[http://chess.nexusify.co:26102/apply?fen=$url[encode;$var[fen]]&from=$var[mvFrom]&to=$var[mvTo]&promotion=$var[promoPiece]]
 $var[legal;$httpResult[legal]]
 $if[$var[legal]!=true]
 $ephemeral
@@ -625,7 +625,7 @@ $var[cc;#FEE75C]
 $var[resultMsg;🤝 ¡Tablas! Partida empatada]
 $endif
 $var[perspective;white]
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Ajedrez — Partida finalizada**
 
@@ -647,7 +647,7 @@ $stop
 $endif
 
 $removeAllComponents
-$httpGet[http://chess.nexusify.co/moves?fen=$url[encode;$var[fen]]]
+$httpGet[http://chess.nexusify.co:26102/moves?fen=$url[encode;$var[fen]]]
 $var[movesCount;$httpResult[count]]
 $var[turn;$httpResult[turn]]
 $var[cc;#5865F2]
@@ -659,7 +659,7 @@ $var[turnLabel;♚ Negras]
 $var[activePlayer;$var[bID]]
 $endif
 $var[lblP;♙ Peón]$var[lblN;♘ Caballo]$var[lblB;♗ Alfil]$var[lblR;♖ Torre]$var[lblQ;♕ Dama]$var[lblK;♔ Rey]$if[$var[turn]==b]$var[lblP;♟ Peón]$var[lblN;♞ Caballo]$var[lblB;♝ Alfil]$var[lblR;♜ Torre]$var[lblQ;♛ Dama]$var[lblK;♚ Rey]$endif
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Ajedrez**
 

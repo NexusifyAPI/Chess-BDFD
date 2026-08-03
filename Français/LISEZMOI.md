@@ -20,7 +20,7 @@ Cette variable stocke l'état complet de chaque partie : `fen|whiteID|blackID|ga
 
 ## API externe
 
-Ce jeu nécessite une API HTTP sans état pour valider les coups et rendre l'échiquier. L'API utilisée est `http://chess.nexusify.co`.
+Ce jeu nécessite une API HTTP sans état pour valider les coups et rendre l'échiquier. L'API utilisée est `http://chess.nexusify.co:26102`.
 
 ## Installation
 

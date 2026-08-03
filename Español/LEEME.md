@@ -20,7 +20,7 @@ Esta variable guarda el estado completo de cada partida: `fen|whiteID|blackID|ga
 
 ## API externa
 
-Este juego requiere una API HTTP stateless para validar jugadas y renderizar el tablero. La API utilizada es `http://chess.nexusify.co`.
+Este juego requiere una API HTTP stateless para validar jugadas y renderizar el tablero. La API utilizada es `http://chess.nexusify.co:26102`.
 
 ## Instalación
 

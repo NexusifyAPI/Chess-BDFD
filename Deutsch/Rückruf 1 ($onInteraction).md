@@ -63,7 +63,7 @@ $setVar[chess_state;$var[newState];$var[wID]]
 
 $var[lastMoveSAN;-]
 $removeAllComponents
-$httpGet[http://chess.nexusify.co/moves?fen=$url[encode;$var[fen]]]
+$httpGet[http://chess.nexusify.co:26102/moves?fen=$url[encode;$var[fen]]]
 $var[movesCount;$httpResult[count]]
 $var[turn;$httpResult[turn]]
 $var[cc;#5865F2]
@@ -75,7 +75,7 @@ $var[turnLabel;♚ Schwarz]
 $var[activePlayer;$var[bID]]
 $endif
 $var[lblP;♙ Bauer]$var[lblN;♘ Springer]$var[lblB;♗ Läufer]$var[lblR;♖ Turm]$var[lblQ;♕ Dame]$var[lblK;♔ König]$if[$var[turn]==b]$var[lblP;♟ Bauer]$var[lblN;♞ Springer]$var[lblB;♝ Läufer]$var[lblR;♜ Turm]$var[lblQ;♛ Dame]$var[lblK;♚ König]$endif
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Schach**
 
@@ -313,7 +313,7 @@ $var[lastMoveSAN;-]
 $textSplit[$var[state];|]
 $var[lastMoveSAN;$splitText[7]]
 $removeAllComponents
-$httpGet[http://chess.nexusify.co/moves?fen=$url[encode;$var[fen]]]
+$httpGet[http://chess.nexusify.co:26102/moves?fen=$url[encode;$var[fen]]]
 $var[movesCount;$httpResult[count]]
 $var[turn;$httpResult[turn]]
 $var[cc;#5865F2]
@@ -325,7 +325,7 @@ $var[turnLabel;♚ Schwarz]
 $var[activePlayer;$var[bID]]
 $endif
 $var[lblP;♙ Bauer]$var[lblN;♘ Springer]$var[lblB;♗ Läufer]$var[lblR;♖ Turm]$var[lblQ;♕ Dame]$var[lblK;♔ König]$if[$var[turn]==b]$var[lblP;♟ Bauer]$var[lblN;♞ Springer]$var[lblB;♝ Läufer]$var[lblR;♜ Turm]$var[lblQ;♛ Dame]$var[lblK;♚ König]$endif
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Schach**
 
@@ -445,7 +445,7 @@ $var[cc;#FEE75C]
 $var[resultMsg;🤝 Remis! Partie endet unentschieden]
 $endif
 $var[perspective;white]
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Schach — Partie beendet**
 
@@ -539,7 +539,7 @@ $var[cc;#FEE75C]
 $var[resultMsg;🤝 Remis! Partie endet unentschieden]
 $endif
 $var[perspective;white]
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Schach — Partie beendet**
 
@@ -607,7 +607,7 @@ $addTextDisplay[# ♟️ **Schach — Remisangebot**
 Nimmst du das Remis an?;main]
 $addSeparator[true;small;main]
 $addMediaGallery[board;main]
-$addMediaGalleryItem[http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme];Aktuelles Brett;false;board]
+$addMediaGalleryItem[http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme];Aktuelles Brett;false;board]
 $addSeparator[true;small;main]
 $addActionRow[r1;main]
 $addButtonCV2[chdraw~$var[wID]~$var[gID];✅ Remis annehmen;success;false;;r1]
@@ -685,7 +685,7 @@ $var[newState;$var[fen]|$var[wID]|$var[bID]|$var[gID]|p|-|$var[lastMoveSAN]|$var
 $setVar[chess_state;$var[newState];$var[wID]]
 
 $removeAllComponents
-$httpGet[http://chess.nexusify.co/moves?fen=$url[encode;$var[fen]]]
+$httpGet[http://chess.nexusify.co:26102/moves?fen=$url[encode;$var[fen]]]
 $var[movesCount;$httpResult[count]]
 $var[turn;$httpResult[turn]]
 $var[cc;#5865F2]
@@ -697,7 +697,7 @@ $var[turnLabel;♚ Schwarz]
 $var[activePlayer;$var[bID]]
 $endif
 $var[lblP;♙ Bauer]$var[lblN;♘ Springer]$var[lblB;♗ Läufer]$var[lblR;♖ Turm]$var[lblQ;♕ Dame]$var[lblK;♔ König]$if[$var[turn]==b]$var[lblP;♟ Bauer]$var[lblN;♞ Springer]$var[lblB;♝ Läufer]$var[lblR;♜ Turm]$var[lblQ;♛ Dame]$var[lblK;♚ König]$endif
-$var[boardUrl;http://chess.nexusify.co/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
+$var[boardUrl;http://chess.nexusify.co:26102/board.png?fen=$url[encode;$var[fen]]&perspective=$var[perspective]&size=600&theme=$var[theme]]
 $addContainer[main;$var[cc];false]
 $addTextDisplay[# ♟️ **Schach**
 

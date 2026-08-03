@@ -2,7 +2,7 @@
 
 A 1v1 Chess game for Discord bots built with **Bot Designer For Discord (BDFD)** using **Components V2**. Features board theme selector (Green/Blue/Brown/Purple), flag mode, draw offers, resignation, automatic check/checkmate/stalemate detection, per-user game state, unique game IDs, and 6 language localizations (Spanish, English, German, Italian, Portuguese, French).
 
-This game requires an external stateless chess API (`http://chess.nexusify.co`) for move validation and board rendering.
+This game requires an external stateless chess API (`http://chess.nexusify.co:26102`) for move validation and board rendering.
 
 ## Variables to create in BDFD
 

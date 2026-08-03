@@ -20,7 +20,7 @@ Diese Variable speichert den kompletten Spielzustand pro Partie: `fen|whiteID|bl
 
 ## Externe API
 
-Dieses Spiel benötigt eine zustandslose HTTP-API zur Zugvalidierung und Brett-Renderierung. Die API ist `http://chess.nexusify.co`.
+Dieses Spiel benötigt eine zustandslose HTTP-API zur Zugvalidierung und Brett-Renderierung. Die API ist `http://chess.nexusify.co:26102`.
 
 ## Installation
 

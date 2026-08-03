@@ -20,7 +20,7 @@ Questa variabile memorizza l'intero stato di ogni partita: `fen|whiteID|blackID|
 
 ## API esterna
 
-Questo gioco richiede un'API HTTP stateless per validare le mosse e renderizzare la scacchiera. L'API utilizzata è `http://chess.nexusify.co`.
+Questo gioco richiede un'API HTTP stateless per validare le mosse e renderizzare la scacchiera. L'API utilizzata è `http://chess.nexusify.co:26102`.
 
 ## Installazione
 
