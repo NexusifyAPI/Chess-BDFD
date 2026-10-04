@@ -1,3 +1,7 @@
+> [!WARNING]
+> **DEPRECATED PROJECT**  
+> The API used in this project is no longer functional and this repository is no longer maintained.
+
 # Chess — BDFD
 
 A 1v1 Chess game for Discord bots built with **Bot Designer For Discord (BDFD)** using **Components V2**. Features board theme selector (Green/Blue/Brown/Purple), flag mode, draw offers, resignation, automatic check/checkmate/stalemate detection, per-user game state, unique game IDs, and 6 language localizations (Spanish, English, German, Italian, Portuguese, French).
